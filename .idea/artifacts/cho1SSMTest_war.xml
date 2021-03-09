@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cho1SSMTest:war">
+    <output-path>$PROJECT_DIR$/cho1SSMTest/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>cho1SSMTest</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="cho1-SSMTest.war">
+      <element id="artifact" artifact-name="cho1SSMTest:war exploded" />
+    </root>
+  </artifact>
+</component>
