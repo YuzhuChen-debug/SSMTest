@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="cho1-SSMTest.war">
+    <root id="archive" name="cho1-SSMTest-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="cho1SSMTest:war exploded" />
     </root>
   </artifact>

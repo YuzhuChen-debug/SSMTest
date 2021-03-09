@@ -1,0 +1,35 @@
+这个项目主要是练习怎么搭建SSM 使用SSM技术完成学生注册,查询学生列表等操作
+
+1创建项目,创建模块
+2添加依赖
+    spring依赖
+    springMVC依赖
+    mybatis依赖
+    mysql驱动
+    druid连接池
+    spring和mybatis连接依赖
+    servlet依赖
+    jsp依赖
+    jackson依赖等
+3创建Controller，Service,Dao,domain等信息
+4填写WEB-INF里面的信息
+    声明discharpterServlet
+    声明spiring过滤器
+    声明乱码过滤器
+5创建spring springMVC mybatis 数据库配置文件
+    填写spring
+        注册扫描器，告诉spirng哪里需要使用注解
+        配置数据库信息地址
+        配置连接池
+        配置sqlSessionFactory
+        配置生成Dao对象
+        配置事物信息
+    springMVC
+        注册扫描器
+        配置视图解析器
+        声明注解驱动
+    mybatis配置信息
+        配置别名
+        配置mapper文件信息
+6创建前端页面
+7填写业务层，控制层和dao层的信息
