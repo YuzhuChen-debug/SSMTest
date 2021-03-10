@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+        <!--引入属性配置文件-->
+        <context:property-placeholder location="classpath:config/mysql.properties"/>
+        <!--组件扫描器-->
+        <context:component-scan base-package="com.bjpowernode.activity.Service"/>
+        <!--Druid连接池信息-->
+        <bean id="myDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+            <property name="url" value="${jdbc.url}"/>
+            <property name="username" value="${jdbc.username}"/>
+            <property name="password" value="${jdbc.password}"/>
+        </bean>
+        <!--sqlSessionFactory-->
+        <bean name="mySqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+            <property name="dataSource" ref="myDataSource"/>
+            <property name="configLocation" value="classpath:config/Mybatis.xml"/>
+        </bean>
+        <!--动态代理对象-->
+        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+            <property name="SqlSessionFactoryBeanName" value="mySqlSessionFactory"/>
+            <property name="basePackage" value="com.bjpowernode.activity.dao"/>
+        </bean>
+
 
 </beans>
